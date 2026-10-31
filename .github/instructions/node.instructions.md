@@ -6,13 +6,13 @@ applyTo: "**/package.json,**/routes/**,**/controllers/**,**/services/**,**/*.mjs
 
 ## DEFAULT SEVERITY
 
-Route:
+Routes:
 Low
 
-Controller:
+Controllers:
 Low
 
-Service:
+Services:
 Medium
 
 Package.json:
@@ -21,7 +21,7 @@ High
 Authentication:
 High
 
-Shared middleware:
+Shared Middleware:
 High
 
 ---
@@ -31,7 +31,7 @@ High
 - Preserve response shape.
 - Preserve status code conventions.
 - Follow existing layering.
-- Follow existing module boundaries.
+- Preserve module boundaries.
 - No new dependencies without approval.
 - Prefer native Node.js APIs.
-- Never hardcode configuration.
+- Never hardcode configuration values.
