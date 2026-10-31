@@ -16,6 +16,13 @@ Capture:
 
 Populate TASK_STATE.md.
 
+Predict:
+
+- Severity
+- Confidence
+
+before opening any AI session.
+
 ---
 
 # PHASE 1 — PLAN
@@ -59,7 +66,7 @@ Approve before implementation.
 
 One task.
 
-One chat.
+One session.
 
 Prefer:
 
@@ -71,7 +78,7 @@ Avoid:
 
 unless required.
 
-Standard implementation prompt:
+Standard prompt:
 
 Implement the approved plan in TASK_STATE.md.
 
@@ -93,12 +100,17 @@ Evidence hierarchy:
 1. Tests
 2. Build
 3. Lint
-4. Runtime validation
+4. Runtime verification
 5. Manual inspection
 
-Review every changed line.
+Review changed lines.
 
-Update TASK_STATE.md.
+Update:
+
+- Verified
+- Metrics
+
+inside TASK_STATE.md.
 
 ---
 
@@ -129,9 +141,15 @@ Do not modify files.
 
 # PHASE 6 — CLOSE
 
+Update metrics.
+
+Append one row to:
+
+docs/metrics/log.md
+
 Commit only justified changes.
 
-Remove or archive TASK_STATE.md.
+Archive or delete TASK_STATE.md.
 
 Permanent decisions become ADRs.
 
