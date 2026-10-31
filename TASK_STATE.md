@@ -2,7 +2,7 @@
 
 Ephemeral task context.
 
-Only one ACTIVE block per task.
+One ACTIVE block per task.
 
 ---
 
@@ -32,24 +32,24 @@ Open Risks:
 
 ---
 
-## TEMPLATE
+## METRICS
 
-Status:
+time_min:
 
-Objective:
+iterations:
 
-Acceptance:
+acceptance_1st:
 
-Scope:
+scope_escape:
 
-Severity:
+sev_pred:
 
-Confidence:
+sev_actual:
 
-Assumptions:
+conf_pred:
 
-Plan:
+conf_actual:
 
-Verified:
+rules_caught:
 
-Open Risks:
+rules_friction:
