@@ -180,6 +180,7 @@ Rules:
 - Do not infer executed validations.
 
 ---
+
 # REPORT FORMAT
 
 Changed:
