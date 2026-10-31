@@ -141,11 +141,15 @@ Do not modify files.
 
 # PHASE 6 — CLOSE
 
-Update metrics.
+Run the CEF Close Task prompt.
 
-Append one row to:
+Update TASK_STATE metrics.
+
+Generate one append-only entry for:
 
 docs/metrics/log.md
+
+Review generated metrics.
 
 Commit only justified changes.
 
