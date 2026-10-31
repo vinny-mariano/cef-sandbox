@@ -16,8 +16,8 @@ High or Critical.
 - Preserve location conventions.
 - Preserve upstream conventions.
 - Preserve header conventions.
-- Prefer targeted edits.
-- Avoid restructuring unrelated blocks.
+- Prefer targeted changes.
+- Avoid unrelated restructuring.
 
 Production changes require:
 
@@ -28,6 +28,6 @@ Validation example:
 
 nginx -t
 
-If not executed report:
+If not executed:
 
 Not executed.
