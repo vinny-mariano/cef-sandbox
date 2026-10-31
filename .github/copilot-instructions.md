@@ -16,16 +16,14 @@ ENGINE.md
 
 ---
 
-## IMPLEMENTATION PREFERENCE
+## IMPLEMENTATION ORDER
 
-Use:
+Prefer:
 
 1. Existing implementation
 2. Existing abstraction
 3. Native platform capability
 4. New implementation
-
-In this order.
 
 ---
 
@@ -35,17 +33,9 @@ User communication:
 
 Portuguese (Brazil)
 
-Code:
+Code and identifiers:
 
 English
-
-Identifiers:
-
-English
-
-Comments:
-
-Project standard.
 
 ---
 
