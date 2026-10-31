@@ -6,19 +6,19 @@ applyTo: "**/*.{jsx,tsx,js,ts}"
 
 ## DEFAULT SEVERITY
 
-Component changes:
+Component:
 Low
 
-Shared hooks:
+Shared Hooks:
 High
 
-Context providers:
+Context Providers:
 High
 
-State stores:
+State Stores:
 High
 
-Public component APIs:
+Public Component APIs:
 High
 
 ---
@@ -27,9 +27,9 @@ High
 
 - Follow existing component patterns.
 - Follow existing state management.
-- Follow existing styling convention.
-- Avoid architectural rewrites.
+- Follow existing styling conventions.
+- Avoid architecture rewrites.
 - No new UI libraries without approval.
 - Prefer local state.
 - Prefer existing hooks.
-- Preserve public component contracts.
+- Preserve component contracts.
