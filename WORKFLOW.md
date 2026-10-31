@@ -70,11 +70,11 @@ One session.
 
 Prefer:
 
-@specific-file
+- @specific-file
 
 Avoid:
 
-@workspace
+- @workspace
 
 unless required.
 
@@ -82,13 +82,18 @@ Standard prompt:
 
 Implement the approved plan in TASK_STATE.md.
 
+Stay within the approved scope.
+
 Follow ENGINE.md.
 
 Report only:
 
 Changed
+
 Validation
+
 Risks
+
 Confidence
 
 ---
@@ -105,12 +110,12 @@ Evidence hierarchy:
 
 Review changed lines.
 
-Update:
+Update in TASK_STATE.md:
 
 - Verified
 - Metrics
 
-inside TASK_STATE.md.
+Validate that reported evidence matches actual execution.
 
 ---
 
@@ -150,6 +155,8 @@ Generate one append-only entry for:
 docs/metrics/log.md
 
 Review generated metrics.
+
+Verify that logged values are supported by evidence.
 
 Commit only justified changes.
 
