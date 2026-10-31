@@ -1,13 +1,15 @@
 # Copilot Engineering Framework (CEF) v1.0
 
-A lightweight engineering framework for GitHub Copilot focused on:
+A lightweight engineering framework for GitHub Copilot.
 
-- reducing rework
-- reducing scope creep
-- minimizing unnecessary context
-- improving implementation consistency
+Designed to:
 
-Designed for:
+- reduce rework
+- reduce scope creep
+- reduce unnecessary context usage
+- improve first-pass implementation quality
+
+Originally designed for:
 
 - React
 - Node.js
@@ -18,49 +20,40 @@ Designed for:
 ## Architecture
 
 ENGINE.md
-Core engineering model.
+
+Core decision model.
 
 WORKFLOW.md
-Operational execution workflow.
+
+Operational workflow.
 
 TASK_STATE.md
+
 Ephemeral task context.
 
+docs/metrics/
+
+Metrics and calibration.
+
 .github/copilot-instructions.md
+
 Global Copilot adapter.
 
-.github/instructions/*.instructions.md
-Path-scoped engineering rules.
+.github/instructions/
+
+Path-scoped instructions.
 
 ---
 
-## Core Concepts
+## Framework Goals
 
-The framework is based on two independent dimensions:
-
-### Severity
-
-How risky a change is.
-
-### Confidence
-
-How certain the implementation context is.
-
-Severity drives approval.
-
-Confidence drives caution.
-
----
-
-## Goal
-
-The goal is not reducing token cost.
+The goal is not minimizing tokens directly.
 
 The goal is:
 
 - fewer iterations
 - less rework
-- less context flooding
+- better scope control
 - higher first-pass acceptance
 
 ---
@@ -71,4 +64,28 @@ Instructions guide behavior.
 
 Verification establishes facts.
 
-Human review is the final control layer.
+Human review remains the final authority.
+
+---
+
+## Freeze Protocol
+
+CEF v1.0.0 remains frozen for the first 20 completed tasks.
+
+Allowed changes during the trial:
+
+- broken glob fixes
+- broken links
+- documentation mistakes
+
+Not allowed:
+
+- rule changes
+- severity changes
+- workflow changes
+
+After 20 logged tasks:
+
+- review metrics
+- evaluate rule effectiveness
+- decide v1.1 changes
