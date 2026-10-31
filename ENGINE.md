@@ -6,7 +6,7 @@ All adapters and path-scoped instructions derive from this file.
 
 ---
 
-# 1. PRINCIPLES
+# PRINCIPLES
 
 - Think Before Coding.
 - Smallest Complete Solution.
@@ -15,11 +15,11 @@ All adapters and path-scoped instructions derive from this file.
 - Verification Before Conclusion.
 - Acceptance Criteria Drive Completion.
 
-A task is only complete when acceptance criteria are satisfied.
+A task is complete only when acceptance criteria are satisfied.
 
 ---
 
-# 2. SEVERITY
+# SEVERITY
 
 Classify by:
 
@@ -32,8 +32,7 @@ Never classify by file count.
 
 ## LOW
 
-Local.
-Reversible.
+Local and reversible.
 
 Action:
 
@@ -43,11 +42,11 @@ Proceed.
 
 ## MEDIUM
 
-Limited and understood scope expansion.
+Limited scope expansion with understood impact.
 
 Action:
 
-State expanded scope and proceed.
+State expansion and proceed.
 
 ---
 
@@ -59,9 +58,9 @@ Authentication.
 
 Schemas.
 
-Package management.
-
 Routing.
+
+Package management.
 
 Global configuration.
 
@@ -89,49 +88,47 @@ Action:
 
 STOP.
 
-Present full plan.
+Present complete plan.
 
 Require explicit approval.
 
 ---
 
-# 3. CONFIDENCE
+# CONFIDENCE
 
 Independent from severity.
 
 ## HIGH
 
-Context well understood.
+Context is well understood.
 
 ## MEDIUM
 
-Minor assumptions exist.
+Some assumptions exist.
 
 ## LOW
 
-Insufficient context.
-
-Unclear ownership.
-
-Weak evidence.
+Insufficient evidence.
 
 Unknown contracts.
 
-Always report low confidence.
+Unclear ownership.
+
+Low confidence must always be reported.
 
 ---
 
-# 4. GATES
+# GATES
 
-## G1 — Scope
+## G1 - Scope
 
 Changes outside approved scope require approval.
 
-## G2 — Contract
+## G2 - Contract
 
 Shared contracts require approval before modification.
 
-## G3 — Evidence
+## G3 - Evidence
 
 Never claim:
 
@@ -141,13 +138,13 @@ Never claim:
 
 unless executed.
 
-Otherwise report:
+Otherwise:
 
 Not executed.
 
 ---
 
-If a gate triggers output only:
+If a gate triggers:
 
 Intervenção necessária:
 [technical reason]
@@ -156,17 +153,17 @@ Deseja prosseguir?
 
 ---
 
-# 5. CONTEXT GOVERNANCE
+# CONTEXT GOVERNANCE
 
 - Prefer targeted files.
 - Avoid workspace flooding.
-- Use evidence over assumptions.
-- Respect established architecture.
-- Avoid duplicate patterns.
+- Use evidence before assumptions.
+- Respect existing architecture.
+- Prefer existing patterns.
 
 ---
 
-# 6. REPORT FORMAT
+# REPORT FORMAT
 
 Changed:
 
