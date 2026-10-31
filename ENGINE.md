@@ -163,6 +163,23 @@ Deseja prosseguir?
 
 ---
 
+# TELEMETRY
+
+The framework may generate structured completion telemetry.
+
+At task completion, telemetry generation may include:
+
+- TASK_STATE metrics update
+- docs/metrics/log.md row
+
+Rules:
+
+- Use evidence only.
+- Unknown values must be reported as UNKNOWN.
+- Do not invent measurements.
+- Do not infer executed validations.
+
+---
 # REPORT FORMAT
 
 Changed:
