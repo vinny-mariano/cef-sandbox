@@ -8,8 +8,9 @@ One ACTIVE block per task.
 
 ## ACTIVE
 
-Status:
+Task ID:
 
+Status:
 planned | implementing | verifying | done
 
 Objective:
@@ -34,6 +35,8 @@ Open Risks:
 
 ## METRICS
 
+### Core
+
 time_min:
 
 iterations:
@@ -41,6 +44,8 @@ iterations:
 acceptance_1st:
 
 scope_escape:
+
+### Calibration
 
 sev_pred:
 
@@ -50,8 +55,16 @@ conf_pred:
 
 conf_actual:
 
+### Framework Feedback
+
 rules_caught:
 
 rules_friction:
 
+### Validation
+
 validation_summary:
+
+### Notes
+
+observations:
