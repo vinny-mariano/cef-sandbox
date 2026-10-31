@@ -53,3 +53,5 @@ conf_actual:
 rules_caught:
 
 rules_friction:
+
+validation_summary:
