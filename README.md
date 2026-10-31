@@ -19,29 +19,37 @@ Originally designed for:
 
 ## Architecture
 
-ENGINE.md
+### ENGINE.md
 
 Core decision model.
 
-WORKFLOW.md
+### WORKFLOW.md
 
 Operational workflow.
 
-TASK_STATE.md
+### TASK_STATE.md
 
 Ephemeral task context.
 
-docs/metrics/
+### docs/metrics/log.md
 
-Metrics and calibration.
+Append-only task metrics log.
 
-.github/copilot-instructions.md
+### docs/metrics/review.md
+
+Periodic framework review and calibration.
+
+### .github/copilot-instructions.md
 
 Global Copilot adapter.
 
-.github/instructions/
+### .github/instructions/
 
 Path-scoped instructions.
+
+### .github/prompts/
+
+Reusable Copilot prompts.
 
 ---
 
@@ -56,6 +64,8 @@ The goal is:
 - better scope control
 - higher first-pass acceptance
 
+Telemetry generation and metrics collection exist to evaluate these outcomes.
+
 ---
 
 ## Design Philosophy
@@ -65,6 +75,35 @@ Instructions guide behavior.
 Verification establishes facts.
 
 Human review remains the final authority.
+
+---
+
+## Framework Lifecycle
+
+Predict:
+
+- Severity
+- Confidence
+
+Execute:
+
+- Plan
+- Implement
+- Verify
+
+Measure:
+
+- First-pass success
+- Iterations
+- Scope escape
+- Severity calibration
+- Confidence calibration
+
+Review:
+
+- Rule effectiveness
+- Friction
+- Framework sustainability
 
 ---
 
@@ -84,8 +123,15 @@ Not allowed:
 - severity changes
 - workflow changes
 
+During the freeze period:
+
+- log every completed task
+- perform weekly reviews
+- collect evidence before proposing changes
+
 After 20 logged tasks:
 
 - review metrics
 - evaluate rule effectiveness
+- identify friction points
 - decide v1.1 changes
