@@ -146,22 +146,18 @@ Do not modify files.
 
 # PHASE 6 — CLOSE
 
-Run the CEF Close Task prompt.
-
-Update TASK_STATE metrics.
-
-Generate one append-only entry for:
-
-docs/metrics/log.md
-
-Review generated metrics.
-
-Verify that logged values are supported by evidence.
-
 Commit only justified changes.
 
-Archive or delete TASK_STATE.md.
+**Important Pre-requisite:**
+Ensure `TASK_STATE.md` is fully populated with the Metrics block (Core, Calibration, Feedback). **Do not clear or overwrite `TASK_STATE.md` manually.** The automation will do this only after reading the data.
 
-Permanent decisions become ADRs.
+**Closing Procedure:**
+1. Use the prompt `.github/prompts/close-task.prompt.md` via Agent mode.
+2. The agent will check the system time and ask you for the active working time (`time_min`) and `acceptance_1st`.
+3. The agent will automatically:
+   - Append (or update) the new metrics row in `docs/metrics/log.md`.
+   - Overwrite `TASK_STATE.md` with the clean, blank template.
+4. Review the generated log entry before committing to ensure no hallucinated values were inserted (G3).
 
-Task state never becomes documentation.
+Durable decisions become ADRs.
+Temporary state never becomes documentation.

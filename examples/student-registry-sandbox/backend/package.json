@@ -10,5 +10,8 @@
     "start": "node src/server.mjs",
     "dev": "node --watch src/server.mjs",
     "test": "node --test"
+  },
+  "dependencies": {
+    "lodash": "^4.18.1"
   }
 }

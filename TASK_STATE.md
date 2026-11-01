@@ -4,6 +4,9 @@ Ephemeral task context.
 
 One ACTIVE block per task.
 
+**⚠️ DO NOT clear this file manually.**
+**Let the `close-task.prompt.md` read the metrics and reset this file automatically.**
+
 ---
 
 ## ACTIVE

@@ -1,33 +1,17 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { studentApi } from "./api/studentApi.js";
-
-function formatDate(value) {
-  if (!value) return "Data indisponível";
-  return new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium" }).format(new Date(value));
-}
+import StudentGroupList from "./components/StudentGroupList.jsx";
 
 export default function App() {
   const [students, setStudents] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
   const [form, setForm] = useState({ name: "", email: "", course: "" });
   const [saving, setSaving] = useState(false);
+  const [refreshToken, setRefreshToken] = useState(0);
 
-  async function loadStudents() {
-    setLoading(true);
-    setError("");
-    try {
-      const result = await studentApi.list();
-      setStudents(result.data);
-    } catch (requestError) {
-      setError(requestError.message);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    loadStudents();
+  const handleStudentsChange = useCallback((updatedStudents) => {
+    setStudents(updatedStudents);
+    setError(null);
   }, []);
 
   function updateField(event) {
@@ -38,10 +22,11 @@ export default function App() {
   async function handleSubmit(event) {
     event.preventDefault();
     setSaving(true);
-    setError("");
+    setError(null);
     try {
       const result = await studentApi.create(form);
       setStudents((current) => [...current, result.data]);
+      setRefreshToken((current) => current + 1);
       setForm({ name: "", email: "", course: "" });
     } catch (requestError) {
       setError(requestError.message);
@@ -79,40 +64,10 @@ export default function App() {
       {error && <div className="alert" role="alert">{error}</div>}
 
       <section className="content-grid">
-        <section className="panel list-panel">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">REGISTROS</p>
-              <h3>Estudantes cadastrados</h3>
-            </div>
-            <button className="button button-quiet" type="button" onClick={loadStudents} disabled={loading}>
-              Atualizar
-            </button>
-          </div>
-
-          {loading ? (
-            <p className="empty-state">Carregando estudantes...</p>
-          ) : students.length === 0 ? (
-            <p className="empty-state">Nenhum estudante cadastrado.</p>
-          ) : (
-            <div className="student-list">
-              {students.map((student) => (
-                <article className="student-row" key={student.id}>
-                  <div className="avatar" aria-hidden="true">{student.name.slice(0, 1).toUpperCase()}</div>
-                  <div className="student-info">
-                    <strong>{student.name}</strong>
-                    <span>{student.email}</span>
-                    <small>{student.course}</small>
-                  </div>
-                  <div className="student-meta">
-                    <span className={`status status-${student.status}`}>{student.status === "active" ? "Ativo" : "Inativo"}</span>
-                    <small>Criado em {formatDate(student.createdAt)}</small>
-                  </div>
-                </article>
-              ))}
-            </div>
-          )}
-        </section>
+        <StudentGroupList
+          onStudentsChange={handleStudentsChange}
+          refreshToken={refreshToken}
+        />
 
         <aside className="panel form-panel">
           <p className="eyebrow">NOVO REGISTRO</p>

@@ -39,3 +39,84 @@ test("registerStudent rejects missing required fields", async () => {
     (error) => error.statusCode === 400 && error.code === "VALIDATION_ERROR",
   );
 });
+
+test("listStudentsGroupedByCourse groups all students by course by default", async () => {
+  const students = [
+    { course: "ADS", status: "active" },
+    { course: "SI", status: "inactive" },
+    { course: "ADS", status: "inactive" },
+  ];
+  const { service } = createService({ async findAll() { return students; } });
+  const expected = {
+    groupedByCourse: {
+      ADS: [students[0], students[2]],
+      SI: [students[1]],
+    },
+  };
+
+  assert.deepEqual(await service.listStudentsGroupedByCourse(), expected);
+  assert.deepEqual(await service.listStudentsGroupedByCourse("all"), expected);
+});
+
+test("listStudentsGroupedByCourse returns an empty grouping for an empty list", async () => {
+  const { service } = createService({ async findAll() { return []; } });
+
+  assert.deepEqual(await service.listStudentsGroupedByCourse(), {
+    groupedByCourse: {},
+  });
+});
+
+test("listStudentsGroupedByCourse filters active students before grouping", async () => {
+  const students = [
+    { course: "ADS", status: "active" },
+    { course: "ADS", status: "inactive" },
+    { course: "SI", status: "active" },
+  ];
+  const { service } = createService({ async findAll() { return students; } });
+
+  assert.deepEqual(await service.listStudentsGroupedByCourse("active"), {
+    groupedByCourse: {
+      ADS: [students[0]],
+      SI: [students[2]],
+    },
+  });
+});
+
+test("listStudentsGroupedByCourse filters inactive students", async () => {
+  const students = [
+    { course: "ADS", status: "active" },
+    { course: "SI", status: "inactive" },
+  ];
+  const { service } = createService({ async findAll() { return students; } });
+
+  assert.deepEqual(await service.listStudentsGroupedByCourse("inactive"), {
+    groupedByCourse: { SI: [students[1]] },
+  });
+});
+
+test("listStudentsGroupedByCourse rejects an invalid status", async () => {
+  const { service } = createService();
+
+  await assert.rejects(
+    () => service.listStudentsGroupedByCourse("pending"),
+    (error) => error.statusCode === 400 && error.code === "VALIDATION_ERROR",
+  );
+});
+
+test("listStudentsGroupedByCourse rejects a null status", async () => {
+  const { service } = createService();
+
+  await assert.rejects(
+    () => service.listStudentsGroupedByCourse(null),
+    (error) => error.statusCode === 400 && error.code === "VALIDATION_ERROR",
+  );
+});
+
+test("listStudentsGroupedByCourse rejects an uppercase status", async () => {
+  const { service } = createService();
+
+  await assert.rejects(
+    () => service.listStudentsGroupedByCourse("ACTIVE"),
+    (error) => error.statusCode === 400 && error.code === "VALIDATION_ERROR",
+  );
+});
