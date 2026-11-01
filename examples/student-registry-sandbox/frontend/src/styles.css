@@ -1,0 +1,56 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f3f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+.page-shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 34px 0 24px; }
+.topbar { display: flex; align-items: center; gap: 13px; padding-bottom: 30px; border-bottom: 1px solid #e1e7f0; }
+.brand-mark { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; color: #fff; background: #243b70; font-weight: 800; letter-spacing: -.04em; }
+.eyebrow { margin: 0 0 6px; color: #70809b; font-size: .68rem; font-weight: 800; letter-spacing: .13em; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin: 0; font-size: 1.05rem; letter-spacing: -.025em; }
+.sandbox-tag { margin-left: auto; padding: 7px 11px; border: 1px solid #cbd8ee; border-radius: 99px; color: #405c8c; background: #edf3ff; font-size: .75rem; font-weight: 700; }
+.intro { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding: 38px 0 28px; }
+.intro h2 { margin-bottom: 8px; font-size: clamp(1.7rem, 4vw, 2.25rem); letter-spacing: -.055em; }
+.intro-copy, .form-copy { max-width: 600px; margin-bottom: 0; color: #6a7890; line-height: 1.6; font-size: .92rem; }
+.summary-card { min-width: 170px; padding: 16px 18px; border: 1px solid #e2e8f2; border-radius: 16px; background: #fff; box-shadow: 0 8px 24px #203a6410; }
+.summary-label, .summary-foot { display: block; color: #718099; font-size: .75rem; }
+.summary-card strong { display: block; margin: 3px 0; color: #243b70; font-size: 2rem; letter-spacing: -.06em; }
+.content-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(280px, .9fr); align-items: start; gap: 20px; }
+.panel { border: 1px solid #e2e8f2; border-radius: 18px; background: #fff; box-shadow: 0 8px 24px #203a6408; }
+.list-panel { padding: 22px; }
+.form-panel { padding: 22px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+h3 { margin-bottom: 0; font-size: 1.05rem; letter-spacing: -.025em; }
+.student-list { display: grid; }
+.student-row { display: flex; align-items: center; gap: 13px; padding: 15px 0; border-top: 1px solid #edf0f5; }
+.avatar { display: grid; flex: 0 0 40px; place-items: center; width: 40px; height: 40px; border-radius: 13px; color: #35548a; background: #edf3ff; font-weight: 800; }
+.student-info { display: grid; min-width: 0; gap: 3px; }
+.student-info strong { font-size: .88rem; }
+.student-info span, .student-info small, .student-meta small { overflow-wrap: anywhere; color: #718099; font-size: .75rem; }
+.student-meta { display: grid; justify-items: end; gap: 7px; margin-left: auto; text-align: right; }
+.status { padding: 4px 8px; border-radius: 99px; font-size: .68rem; font-weight: 800; }
+.status-active { color: #19704c; background: #e8f7ef; }
+.status-inactive { color: #8b5a19; background: #fff4df; }
+.form-panel h3 { margin-bottom: 8px; }
+.form-copy { margin-bottom: 20px; font-size: .82rem; }
+form { display: grid; gap: 9px; }
+label { margin-top: 5px; color: #42516a; font-size: .78rem; font-weight: 700; }
+input { width: 100%; padding: 11px 12px; border: 1px solid #dce3ed; border-radius: 10px; outline: none; color: #172033; background: #fff; }
+input:focus { border-color: #6486c1; box-shadow: 0 0 0 3px #6486c120; }
+.button { padding: 9px 12px; border: 0; border-radius: 10px; cursor: pointer; font-size: .78rem; font-weight: 800; }
+.button:disabled { cursor: not-allowed; opacity: .65; }
+.button-quiet { color: #405c8c; background: #edf3ff; }
+.button-primary { margin-top: 10px; padding: 12px; color: #fff; background: #243b70; }
+.button-primary:hover:not(:disabled) { background: #304d88; }
+.empty-state { padding: 28px 10px; color: #718099; text-align: center; font-size: .85rem; }
+.alert { margin-bottom: 18px; padding: 12px 14px; border: 1px solid #f0c9c9; border-radius: 10px; color: #8d3030; background: #fff0f0; font-size: .85rem; }
+.footer-note { padding-top: 24px; color: #8a96a8; text-align: center; font-size: .72rem; }
+@media (max-width: 760px) { .intro { align-items: stretch; flex-direction: column; } .summary-card { width: 100%; } .content-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .page-shell { width: min(100% - 24px, 1180px); padding-top: 20px; } .student-row { align-items: start; flex-wrap: wrap; } .student-meta { flex: 1 1 100%; justify-items: start; margin-left: 53px; text-align: left; } }

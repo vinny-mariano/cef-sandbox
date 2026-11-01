@@ -1,0 +1,26 @@
+[
+  {
+    "id": "stu-1001",
+    "name": "Ana Ribeiro",
+    "email": "ana.ribeiro@example.invalid",
+    "course": "Análise e Desenvolvimento de Sistemas",
+    "status": "active",
+    "createdAt": "2026-08-12T13:20:00.000Z"
+  },
+  {
+    "id": "stu-1002",
+    "name": "Bruno Martins",
+    "email": "bruno.martins@example.invalid",
+    "course": "Ciência de Dados",
+    "status": "active",
+    "createdAt": "2026-08-18T09:45:00.000Z"
+  },
+  {
+    "id": "stu-1003",
+    "name": "Camila Costa",
+    "email": "camila.costa@example.invalid",
+    "course": "Design Digital",
+    "status": "inactive",
+    "createdAt": "2026-09-02T16:10:00.000Z"
+  }
+]
